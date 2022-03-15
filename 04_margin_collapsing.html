@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Margin Collapsing</title>
+  <style>
+    #demo {
+      border: 2px dashed royalblue;
+    }
+
+    #demo div {
+      margin: 2rem 0;
+      background: lavender;
+    }
+
+    #demo p {
+      margin: .4rem 0 1.2rem 0;
+      background: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <h1><a style="text-decoration: none;"
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing"> Margin
+      Collapsing</a></h1>
+  <div>块的 top 和 bottom 边距有时会组合（折叠）成单个边距，其大小是单个边距中最大的一个（或者只是其中一个，如果它们相等），这种行为称为边距折叠。请注意，float 元素和 absolute
+    绝对定位元素的边距永远不会折叠。</div>
+  <h3>折叠发生的3个基本要素：</h3>
+  <ul>
+    <li>
+      <h4>相邻的兄弟元素</h4>
+      <p>相邻兄弟的边距被折叠（除非后一个兄弟需要通过 clear 进行清除）。</p>
+    </li>
+    <li>
+      <h4>没有分隔父子关系的内容</h4>
+      <p>
+        如果没有 border、padding、inline 部分、创建的
+        <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context">block formatting
+          context</a>
+        ，或者没有将块的 margin-top 与其一个或多个后代块的 margin-top 部分开的间隙；或者没有 border、padding、inline content、height 或 min-height 来将块的
+        margin-bottom 与其一个或多个后代块的 marign-bottom 分开，
+        那么这些边距会被折叠。折叠的边距最终在父级之外。
+      </p>
+    </li>
+    <li>
+      <h4>Empty Blocks</h4>
+      <p>如果没有border、padding、inline content、height 或 min-height 来将块的 margin-top 与其 margin-bottom 分开，则其 margin-top 和
+        margin-bottom 会被折叠。</p>
+    </li>
+  </ul>
+  <div id="demo">
+    <p>这段文本的 margin-bottom 将被折叠 …</p>
+    <p>… 与本段的 margin-top，与前面一段两者之间产生 <code>1.2rem</code> 的边距</p>
+
+    <div>这个父元素包含两个段落
+      <p>这一段与上面的文字之间有 <code>.4rem</code> 的边距。</p>
+      <p>我的下边距与我的父母一起折叠，产生 2rem 的下边距<code>2rem</code>. 与上面的一段之间有 <code>1.2rem 的间距</code>, 这个 <code>1.2rem</code> 的间距是上面一段的 margin-bottom 与这一段的 margin-top 的最大值</p>
+    </div>
+
+    <p>我在上一个元素的下面 <code>2rem</code> 的位置, 上面元素的 marign-bottom 包含了当前元素的 margin-top </p>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+.align-items > .flex {
+    height: 150px;
+}
+
+.align-items > .flex-start {
+    align-items: flex-start;
+}
+
+.align-items > .flex-end {
+    align-items: flex-end;
+}
+
+.align-items > .center {
+   align-items: center; 
+}
+
+.align-items > .stretch {
+    align-items: stretch;
+}
+
+.align-items > .stretch > .item {
+    height: 150px;
+}
+
+.align-items > .baseline {
+    align-items: baseline;
+}
+
+.align-items >  .baseline > .item {
+    height: auto;
+}
+
+/* align-self */
+.align-self > .flex {
+    height: 150px;
+}
+
+.align-self > .flex-start > .item:nth-child(1) {
+    align-self: flex-start;
+}
+
+.align-self > .flex-end > .item:nth-child(1) {
+    align-self: flex-end;
+} 
+
+.align-self > .center {
+    align-items: flex-start;
+} 
+
+.align-self > .center > .item:nth-child(1) {
+    align-self: center;
+}
+
+.align-self > .stretch > .item:nth-child(1) {
+    height: auto;
+    align-self: stretch;
+}
+
+.align-self > .baseline > .item:nth-child(1) {
+    height: auto;
+    align-self: baseline;
+}
+
+/* Align Content */
+.align-content > .flex {
+    flex-wrap: wrap;    /*set to wrap all items*/
+    height: 400px;
+    width: 500px;
+}
+
+.align-content > .flex:not(.stretch) > .item {
+    padding: 20px;
+    height: 60px;
+}
+
+.align-content > .flex-start {
+    align-content: flex-start;
+}
+
+.align-content > .flex-end {
+    align-content: flex-end;
+}
+
+.align-content > .center {
+    align-content: center;
+}
+
+.align-content > .space-between {
+    align-content: space-between;
+}
+
+.align-content > .stretch {
+    align-content: stretch;
+    align-items: unset; /*此属性与 align-content 冲突*/
+}
+
+.align-content > .stretch > .item {
+    height: auto;
+}
+
+.align-content > .space-around {
+    align-content: space-around;
+}
+
+
+
+/* justify content */
+.justify-content > .flex {
+    height: 150px;
+    align-items: center;
+}
+
+.justify-content > .flex-start {
+    justify-content: flex-start;
+}
+
+.justify-content > .flex-end {
+    justify-content: flex-end;
+}
+
+.justify-content > .center {
+    justify-content: center;
+}
+
+.justify-content > .space-between {
+    justify-content: space-between;
+}
+
+.justify-content > .space-around {
+    justify-content: space-around;
+}
+
+
+/* Auto Margins */
+.auto-margin > .flex {
+    height: 150px;
+}
+
+
+.auto-margin > .flex > .auto-right {
+    margin-right: auto;
+}
+
+.auto-margin > .flex > .auto-left {
+    margin-left: auto;
+}
+
+/* Create Gap */
+.gap > .flex {
+    width: 500px;
+    height: 210px;
+    flex-wrap: wrap;
+    gap: 10px 30px; /* 等于下面两条语句*/
+    /* row-gap: 10px;
+    column-gap: 30px; */
+}
+
+.gap > .flex > .item {
+    flex: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Flex And Order</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/flex_and_order.css">
+</head>
+
+<body>
+    <h1>控制对其的属性</h1>
+    <h2> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Controlling_Ratios_of_Flex_Items_Along_the_Main_Ax">flex-grow、flex-shrink、flex-basis</a></h2>
+    <p>flex 是 flex-grow、flex-shrink、flex-basis 的缩写，它控制 flex item 在主轴上的布局。</p>
+    <ui>
+        <li>
+            flex-grow: 指定一个 flex item 获得多少正可用空间？默认值为0。
+        </li>
+        <li>
+            flex-shrink: 指定一个 flex item 可以从自身中删除多少负可用空间？ 默认值为1。animatable。
+        </li>
+        <li>flex-basis: 在发生 grow 和 shrink 之前，项目的大小是多少？</li>
+        <li>order: 指定一个 flex item 在容器中主轴上的的排列顺序</li>
+    </ui>
+    <ul>
+        <li>
+            <p>flex-basis</p>
+            <div>定义 flex-item 的宽度</div>
+            <div class="flex flex-basis">
+                <div class="item">
+                    <div class="content">a</div>
+                </div>
+                <div class="item">
+                    <div class="content">b</div>
+                </div>
+                <div class="item">
+                    <div class="content">c</div>
+                </div>
+                <div class="item">
+                    <div class="content">d</div>
+                </div>
+                <div class="item">
+                    <div class="content">e</div>
+                </div>
+            </div>
+        </li>
+
+
+        <li>
+            <p>flex-grow</p>
+            <div id="demo">
+                下面的示例中，定义 flex 容器宽度为 700px，每个 flex-item 的 flex-basis 为100px, 也就是每个 item 的基础宽度为100px, 
+                这里有5个item总共占据 500px 的空间。那么 flex-grow 的作用就是将剩余的 （700px - 500px）的空间平均分配给指定 flex-grow 值大于0的 item,
+                在这里 B 定义了 flex-grow: 1，D 定义了 flex-grow: 3，其它 item flex-grow 值为0，所以 B 可以多分配剩余宽度的 1 / (1 + 3) 的值，也就是 200 * (1 / 4) 等于50px的宽度，
+                所以 B 最终的宽度为150px，同理 D 添加的额外宽度为 200 * (3 / 4) 等于150px，最终为250px。其余 flex-grow 值为0的项目不分配额外宽度。
+            </div>
+            这里给出一个计算公式：
+               <ul>
+                   <li>flexWidth 是 flex 容器的宽度 </li>
+                   <li>totalWidth 是所有 flex-item 的 flex-basic 宽度和;</li>
+                   <li>offset = totalWidth - flexWidth</li>
+                   <li>growBasicWidth 等于所有flex-item 的 flex-shirnk * flex-basis 总和</li>
+                   <li>那么 flex-item 的宽度为 flex-basic + (flex-grow * flex-basis) / growBasicWidth * offset)</li>
+               </ul>               
+            </div>
+            <div>
+                下面示例带入公式计算, 其中 B 的 flex-grow: 1, D 的 flex-grow: 3，所以:
+                 <ul>
+                     <li>B 的宽度为 100 + (1 * 100 / (1 * 100 + 3 * 100) * 200) = 150</li>
+                     <li>D 的宽度为 100 + (3 * 100 / (1 * 100 + 3 * 100) * 200) = 250</li>
+                 </ul>
+            </div>
+            <div>如果 flex-item 带有边框、padding、margin 等则 offset 需要减去 边框、padding 的和</div>
+            <div class="flex flex-grow">
+                <div class="item">
+                    <div class="content">A</div>
+                </div>
+                <div class="item">
+                    <div class="content">B</div>
+                </div>
+                <div class="item">
+                    <div class="content">C</div>
+                </div>
+                <div class="item">
+                    <div class="content">D</div>
+                </div>
+                <div class="item">
+                    <div class="content">E</div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <p>flex-shrink</p>
+            <div>
+               flex-shirk 的表现与 flex-grow 相反，在 flex 容器的总宽度小于所有项目的 flex-basic 之和时，它会压缩 item 的宽度。
+               当 flex-shirk 的值为0是不进行压缩，当 flex-shirk 大于0时，按所有 item 的 flex-shirk 之和的比例进行压缩。例如下面的示例中，
+               flex 总宽度为 600px，指定 flex-basic: 150, 那么所有item的宽度之和将比给 flex 分配的宽度多 150px，所以这里将对多出的150px从 flex 的 item 中
+               进行扣除。由于 A、C、E 的 flex-shirk 值为 0，所以不进行扣除所以还是150px的宽度。B flex-shirk 值为 1, D flex-shirk 值为4，所以
+               平均每一份扣除的宽度为 150 / (1 + 4) 等于 30px，其中 B 扣除一份也就是 30px，所以其最终宽度为 100px。D 扣除4分也就是120px，所以最终宽度
+               为 30px。这里给出一个计算公式：
+               <ul>
+                   <li>flexWidth 是 flex 容器的宽度 </li>
+                   <li>totalWidth 是所有 flex-item 的 flex-basic 宽度和;</li>
+                   <li>offset = totalWidth - flexWidth</li>
+                   <li>shirnkBasicWidth 等于所有flex-item 的 flex-shirnk * flex-basis 总和</li>
+                   <li>那么 flex-item 的宽度为 flex-basic + (flex-shirk * flex-basis) / shirnkBasicWidth * offset)</li>
+               </ul>               
+            </div>
+            <div>
+                下面示例带入公式计算, 其中 B 的 flex-shirnk: 1, D 的 flex-shrink: 4，所以:
+                 <ul>
+                     <li>B 的宽度为 150 + (1 * 150 / (1 * 150 + 4 * 150) * -150) = 120</li>
+                     <li>D 的宽度为 150 + (4 * 150 / (1 * 150 + 4 * 150) * -150) = 30</li>
+                 </ul>
+            </div>
+            <div class="flex flex-shrink">
+                <div class="item">
+                    <div class="content">A</div>
+                </div>
+                <div class="item">
+                    <div class="content">B</div>
+                </div>
+                <div class="item">
+                    <div class="content">C</div>
+                </div>
+                <div class="item">
+                    <div class="content">D</div>
+                </div>
+                <div class="item">
+                    <div class="content">E</div>
+                </div>
+            </div>
+            <div>
+                如果有 flex-item 带边框，padding、margin 等，则上面的 offset 还应该减去所有的边框的宽度，这里设置边框为5，所以
+                offset = offset - 5 * 2 * 5 = -200
+                因此带入上面的公式得出 B 的宽度为 110px, D 的宽度为 10px
+            </div>
+            <div class="flex flex-shrink border">
+                <div class="item">
+                    <div class="content">A</div>
+                </div>
+                <div class="item">
+                    <div class="content">B</div>
+                </div>
+                <div class="item">
+                    <div class="content">C</div>
+                </div>
+                <div class="item">
+                    <div class="content"></div>
+                </div>
+                <div class="item">
+                    <div class="content">E</div>
+                </div>
+            </div>
+ 
+        </li>
+        <li>
+            <p>order</p>
+            <div>定义 flex-item 的显示顺序，值越大越靠后</div>
+            <div class="flex order">
+                <div class="item">
+                    <div class="content">a</div>
+                </div>
+                <div class="item">
+                    <div class="content">b</div>
+                </div>
+                <div class="item">
+                    <div class="content">c</div>
+                </div>
+                <div class="item">
+                    <div class="content">d</div>
+                </div>
+                <div class="item">
+                    <div class="content">e</div>
+                </div>
+            </div>
+        </li>
+ 
+
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Float</title>
+    <link rel="stylesheet" href="float.css">
+</head>
+
+<body>
+    <h1><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/float">See also</a></h1>
+    <p>float CSS 属性将一个元素放在其容器的左侧或右侧，允许文本和内联元素环绕它。元素从页面的正常流中移除，但仍是流的一部分</p>
+    <div>
+        <strong>注意：float 元素意味着元素使用的是 block 布局 </strong>
+    </div>
+    <div class="float">
+        <div class="left">1</div>
+        <div class="left">2</div>
+        <div class="right">3</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Morbi tristique sapien ac erat tincidunt, sit amet dignissim
+            lectus vulputate. Donec id iaculis velit. Aliquam vel
+            malesuada erat. Praesent non magna ac massa aliquet tincidunt
+            vel in massa. Phasellus feugiat est vel leo finibus congue.</p>
+    </div>
+    <h1><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clear">clear float</a></h1>
+    <p>clear 可以清除当前元素左右两边的元素的 float 效果（如果左右两个元素是浮动状态的话）</p>
+
+    <h2>no-clear</h2>
+    <div class="clear-float no-clear">
+        <div class="left">left</div>
+        <div class="right">right</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Morbi tristique sapien ac erat tincidunt, sit amet dignissim
+            lectus vulputate. Donec id iaculis velit. Aliquam vel
+            malesuada erat. Praesent non magna ac massa aliquet tincidunt
+            vel in massa. Phasellus feugiat est vel leo finibus congue.</p>
+    </div>
+
+    <h2>clear-left</h2>
+    <div class="clear-float clear-left">
+        <div class="left">left</div>
+        <div class="right">right</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Morbi tristique sapien ac erat tincidunt, sit amet dignissim
+            lectus vulputate. Donec id iaculis velit. Aliquam vel
+            malesuada erat. Praesent non magna ac massa aliquet tincidunt
+            vel in massa. Phasellus feugiat est vel leo finibus congue.</p>
+    </div>
+
+    <h2>clear-right</h2>
+    <div class="clear-float clear-right">
+        <div class="left">left</div>
+        <div class="right">right</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Morbi tristique sapien ac erat tincidunt, sit amet dignissim
+            lectus vulputate. Donec id iaculis velit. Aliquam vel
+            malesuada erat. Praesent non magna ac massa aliquet tincidunt
+            vel in massa. Phasellus feugiat est vel leo finibus congue.</p>
+    </div>
+
+    <h2>clear-both</h2>
+    <div class="clear-float clear-both">
+        <div class="left">left</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Morbi tristique sapien ac erat tincidunt, sit amet dignissim
+            lectus vulputate. Donec id iaculis velit. Aliquam vel
+            malesuada erat. Praesent non magna ac massa aliquet tincidunt
+            vel in massa. Phasellus feugiat est vel leo finibus congue.</p>
+        <div class="right">right</div>
+    </div>
+
+
+</body>
+
+</html>

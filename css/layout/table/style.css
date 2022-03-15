@@ -1,0 +1,72 @@
+.table {
+    display: table;
+    border: 1px solid rosybrown;
+    width: 100%;
+}
+/* Caption */
+.table > .caption {
+    display: table-caption;
+    caption-side: bottom;
+}
+
+/* Header */
+.table > .header {
+    display: table-header-group;
+}
+
+.table > .header > .row {
+    display: table-row;
+}
+
+.table > .header > .row > p {
+    display: table-cell;
+    font-weight: bold;
+    color: cornflowerblue;
+}
+
+/* Body */
+.table > .body {
+    display: table-row-group;
+}
+
+.table > .body > .row {
+    display: table-row;
+    border: 1px solid burlywood;
+}
+
+.table > .body > .row > p {
+    display: table-cell;
+}
+
+/* Footer */
+.table > .footer {
+    display: table-footer-group;
+}
+
+.table > .footer > .row {
+    display: table-row;
+}
+
+.table > .footer > .row > p {
+    display: table-cell;
+    font-weight: bold;
+    color: chocolate;
+}
+
+
+/* colgroup */
+.table > .colgroup {
+    display: table-column-group;
+}
+
+.table > .colgroup > .col {
+    display: table-column;
+}
+
+.table > .colgroup > .col:nth-child(2) {
+    background-color: lightcoral;
+}
+
+.table > .colgroup > .col:nth-child(3) {
+    background-color: blanchedalmond;
+}

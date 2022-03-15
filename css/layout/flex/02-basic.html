@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Basic Concepts of Flexbox</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+       
+        /* flex-direction */
+        .row {
+            flex-direction: row;
+        }
+
+        .row-reverse {
+            flex-direction: row-reverse;
+        }
+
+        .column {
+            height: 400px;
+            flex-direction: column;
+        }
+
+        .column-reverse {
+            height: 400px;
+            flex-direction: column-reverse;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>flex-direction</h1>
+    <ul>
+        <li><h3>row</h3>
+            <div>flex 容器的主轴被定义为与文本方向相同。起点和终点与内容方向相同。</div>
+            <div class="flex row">
+                <div class="item">
+                    <div class="content">a</div>
+                </div>
+                <div class="item">
+                    <div class="content">b</div>
+                </div>
+                <div class="item">
+                    <div class="content">c</div>
+                </div>
+            </div>
+        </li>
+        <li><h3>row-reverse</h3>
+            <div>flex 容器的主轴被定义为与文本方向相同。但起点和终点与内容方向相反。</div>
+            <div class="flex row-reverse">
+                <div class="item">
+                    <div class="content">a</div>
+                </div>
+                <div class="item">
+                    <div class="content">b</div>
+                </div>
+                <div class="item">
+                    <div class="content">c</div>
+                </div>
+            </div>
+        </li>
+        <li><h3>column</h3>
+            <div>flex 容器的主轴与块轴相同。起点和终点与写模式的前后点相同。</div>
+            <div class="flex column">
+                <div class="item">
+                    <div class="content">a</div>
+                </div>
+                <div class="item">
+                    <div class="content">b</div>
+                </div>
+
+            </div>
+        </li>
+        <li><h3>column-reverse</h3>
+            <div>flex 容器的主轴与块轴相同。但起点和终点与写模式的前后点相反。</div>
+            <div class="flex column-reverse">
+                <div class="item">
+                    <div class="content">a</div>
+                </div>
+                <div class="item">
+                    <div class="content">b</div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+</body>
+
+</html>

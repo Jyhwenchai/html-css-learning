@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Wrapping Flex Items</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/wrapping_of_flex_items.css">
+</head>
+
+<body>
+    <h1>flex-wrap</h1>
+    <h2> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items">使用 flex-wrap 及 item 的隐藏</a></h2>
+    <p>flex-wrap: 控制 flex item 是否填充 flex 容器多余的空间。
+        如果在设置 flex-wrap 为 wrap 时，设置 flex-grow、flex-shrink 为0，即禁止 flex item 进行增长或缩小，那么wrap属性将不被应用。</p>
+   <ul>
+        <li>
+            <p>flex-wrap no grow shrink</p>
+            <div class="flex wrap-no-grow-shrink">
+                <div class="item">
+                    <div class="content">a</div>
+                </div>
+                <div class="item">
+                    <div class="content">b</div>
+                </div>
+                <div class="item">
+                    <div class="content">c</div>
+                </div>
+                <div class="item">
+                    <div class="content">d</div>
+                </div> 
+                <div class="item"> 
+                    <div class="content">e</div>
+                </div>
+                <div class="item">
+                    <div class="content">f</div>
+                </div>
+                <div class="item">
+                    <div class="content">g</div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <p>flex-wrap</p>
+            <div class="flex flex-wrap">
+                <div class="item">
+                    <div class="content">a</div>
+                </div>
+                <div class="item">
+                    <div class="content">b</div>
+                </div> <div class="item">
+                    <div class="content">c</div>
+                </div>
+                <div class="item">
+                    <div class="content">d</div>
+                </div>
+                <div class="item">
+                    <div class="content">e</div>
+                </div>
+                <div class="item">
+                    <div class="content">f</div>
+                </div>
+                <div class="item">
+                    <div class="content">g</div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <p>visibility</p>
+            <div>visibility 隐藏 flex-item 会保留其所占据的空间</div>
+            <div class="flex visibility">
+                <div class="item">
+                    <div class="content">a</div>
+                </div>
+                <div class="item">
+                    <div class="content">b</div>
+                </div>
+                <div class="item">
+                    <div class="content">c</div>
+                </div>
+
+            </div>
+        </li>
+        <li>
+            <p>display: none</p>
+            <div>使用 display: none 隐藏 flex-item 会不保留其所占据的空间</div>
+            <div class="flex display-none">
+                <div class="item">
+                    <div class="content">a</div>
+                </div>
+                <div class="item">
+                    <div class="content">b</div>
+                </div>
+                <div class="item">
+                    <div class="content">c</div>
+                </div>
+
+            </div>
+        </li>
+    </ul>
+</body>
+
+</html>

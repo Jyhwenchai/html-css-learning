@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Font-Size</title>
+    <style>
+        .px {
+            font-size: 16px;
+        }
+        .em {
+            font-size: 1em;
+        }
+        .em-super {
+            font-size: 62.5%; /* equal to 10px*/
+        }
+        .em-super > .em-child {
+            font-size: 1em; 
+        }
+        .rem-super {
+            font-size: 200%;
+        }
+        .rem-super p {
+            font-size: 1em;
+        }
+        .rem-super > .rem-child {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>默认 html 的 font-size 为 16px</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, est!</p> 
+    </div>
+    <div>
+        <h2>px</h2>
+        <p class="px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, est!</p> 
+    </div>
+    <div>
+        <h2>em (默认 1em = 根元素 html 的大小)</h2>
+        <p class="em">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, est!</p> 
+        <h2>em 参照的是父元素的字体大小</h2>
+        <div class="em-super">
+            <p>将父元素的 font-size 设置为默认字体大小(16px)的 62.5%，那么意味着当前元素的 font-size 为 10px，1em = 10px. 当前元素的子元素设置的 em 都将参照此节点的 font-size。</p>
+            <p class="em-child">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, est!</p> 
+        </div>
+    </div>
+
+    <div>
+        <h2>rem (rem 与 em 的区别是它参照的是根元素 html 的 font-size，而不是父元素的 font-size)</h2>
+        <div class="rem-super">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe, doloribus!</p>
+            <p class="rem-child">Lorem ipsum, dolor sit amet consectetur adipisicing elit. At, ve!</p>
+        </div>
+    </div>
+</body>
+</html>

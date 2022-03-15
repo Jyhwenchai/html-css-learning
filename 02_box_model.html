@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Box Model</title>
+	<style>
+		#demo {
+			border: 2px dashed cornflowerblue;
+			padding: 10px;
+		}
+
+		.block {
+			width: 100px;
+			height: 100px;
+			border: 5px solid royalblue;
+			padding: 10px;
+			margin: 15px;
+			background-color: brown;
+			text-align: center;
+			color: white;
+		}
+
+		.example>.normal {
+			width: 100px;
+			height: 100px;
+			background-color: brown;
+			text-align: center;
+			color: white;
+			margin: 15px;
+		}
+
+		.box-inline>.example span {
+			background-color: rosybrown;
+			color: white;
+			text-align: center;
+		}
+
+		.box-inline>.example>.inline {
+			border: 5px solid red;
+			padding: 10px;
+			margin: 15px;
+		}
+
+		.box-inline-block>.example>span {
+			display: inline-block;
+			background-color: rosybrown;
+			color: white;
+			text-align: center;
+			width: 100px;
+			height: 100px;
+		}
+
+		.box-inline-block>.example {
+			font-size: 0;
+		}
+
+		.box-inline-block>.example>.inline-block {
+			border: 5px solid red;
+			padding: 10px;
+			margin: 15px;
+			font-size: 16px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model">Box Model</a></h1>
+	<div class="box-block">
+		<h4>1. 如果 box 被定义为一个 block，它将拥有以下行为</h4>
+		<ul>
+			<li>box 将会换行</li>
+			<li>box 将沿内联方向(也就是水平方向)延伸以填充其容意味着盒子将变得与其容器一样宽，填充 100% 的可用空间。</li>
+			<div id="demo">示例：
+				<div style="background-color: aquamarine;">div 的宽度占据容器宽度的 100%</div>
+			</div>
+			<li>width 和 height 属性将被考虑。</li>
+			<li>padding、margin 和 border 会导致其他元素被推离框</li>
+		</ul>
+		<div><strong>Box Width / Height 的计算</strong> </div>
+		<p>box 的 width = width + padding-left + padding-right + border-left + border-right</p>
+		<div class="example">
+			<div class="block">Block</div>
+			<div class="normal">Normal</div>
+		</div>
+	</div>
+	<div class="box-inline">
+		<h4>2. 如果 box 被定义一个 inline，它将拥有以下行为</h4>
+		<ul>
+			<li>box 不会换行</li>
+			<li>Width 和 Height 将不会生效</li>
+			<li>垂直的 padding，marign 和 border 将会被应用，但是不会导致其它的 inline box 远离该 box</li>
+			<li>水平的 padding，marign 和 border 将会被应用，但是不会导致其它的 inline box 远离该 box
+			</li>
+			<div id="demo">示例：
+				<div><span style="background-color: aquamarine;">Left</span><span
+						style="background-color: bisque;">Right</span>会在同一行显示</div>
+			</div>
+		</ul>
+		<div><strong>Box Width / Height 的计算</strong> </div>
+		<p>box 的 width = width + padding-left + padding-right + border-left + border-right</p>
+		<div class="example">
+			<span class="inline">Span</span>
+			<span class="normal">Span</span>
+		</div>
+	</div>
+	<div class="box-inline-block">
+		<h4>2. 如果 box 被定义一个 inline-block，它将拥有以下行为</h4>
+		<ul>
+			<li>box 不会换行</li>
+			<li>Width 和 Height 将生效</li>
+			<li>垂直的 padding，marign 和 border 将会被应用，但是不会导致其它的 inline box 远离该 box</li>
+			<li>水平的 padding，marign 和 border 将会被应用，但是不会导致其它的 inline box 远离该 box</li>
+		</ul>
+		<div><strong>Box Width / Height 的计算</strong> </div>
+		<p>box 的 width = width + padding-left + padding-right + border-left + border-right</p>
+		<div class="example">
+			<span class="inline-block">Span</span>
+			<span class="inline-block">Span</span>
+		</div>
+	</div>
+
+</body>
+
+</html>

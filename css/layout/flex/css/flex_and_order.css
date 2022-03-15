@@ -1,0 +1,115 @@
+.flex {
+    width: 700px;
+    height: 150px;
+}
+
+.flex > .item {
+    width: auto;
+    height: auto;
+    border: 0;
+}
+
+/*
+----- flex-grow ----
+- 假设容器 width 为 700px, 所有 item 的 width 为100px。
+
+那么剩余空间为 200px，那么剩余的空间将被所有 item 的 flex-grop 值的总和进行平分即：
+- 每份的值 = 剩余空间 200px / (item1的 flex-grow + item2的 .flex-grow + ...) 
+- 那么每个 item 的 width = 原本的width + 每份的值 * 自身的 flex-grow
+*/
+.flex-grow > .item {
+    flex-grow: 0;
+    flex-basis: 100px;
+}
+
+/*
+如果设置第二个 item 的 flex-grow: 1, 那么此 item 将占据剩余的所有空间，那么它的库宽度为 300px
+*/
+.flex-grow > .item:nth-child(2) {
+    background-color: lightcoral;
+    flex-grow: 1;   /*设置为0 或 initial，item 将缩放为内容的固有尺寸*/
+}
+
+.flex-grow > .item:nth-child(4) {
+    background-color: lightseagreen;
+    flex-grow: 3;
+}
+
+
+
+/*
+----- flex-shrink ----
+- 假设容器 width 为 600px, 所有 item 的 width 为150px。
+
+那么超出的空间为 150px，那么超出空间将被所有 item 的 flex-shrink 值的总和进行平分即：
+- 每份的值 = 超出空间 150px / (item1的 flex-shrink + item2的 .flex-shrink + ...) 
+- 那么每个 item 的 width = 原本的width - 每份的值 * 自身的 flex-shrink
+*/
+.flex-shrink {
+    width: 600px;
+}
+
+.flex-shrink > .item {
+    flex-grow: 0;
+    flex-shrink: 0; 
+    flex-basis: 150px;
+}
+
+.flex-shrink > .item:nth-child(2) {
+    background-color: lightcoral;
+    flex-shrink: 1;
+}
+
+.flex-shrink.border > .item {
+    border: 5px solid bisque;
+}
+
+.flex-shrink > .item:nth-child(4) {
+    background-color: lightseagreen;
+    flex-shrink: 4;
+}
+
+.flex-basis > .item {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100px;
+}
+
+.flex-basis > .item:nth-child(2) {
+    background-color: lightcoral;
+    flex-basis: 200px;
+}
+
+.flex-basis > .item:nth-child(4) {
+    background-color: lightseagreen;
+    flex-basis: 150px;
+}
+
+/* Controler Order */
+/*
+可以指定负值
+*/
+.order > .item {
+    width: 100px;
+    border: 1px solid red;
+}
+
+.order > .item:nth-child(1) {
+    order: 2;
+}
+
+.order > .item:nth-child(2) {
+    order: 1;    
+}
+
+.order > .item:nth-child(3) {
+    order: 4;    
+}
+
+.order > .item:nth-child(4) {
+    order: 1;    
+}
+
+.order > .item:nth-child(5) {
+    order: 3;    
+}

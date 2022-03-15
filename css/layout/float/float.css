@@ -1,0 +1,79 @@
+.float {
+    border: 1px solid blue;
+    width: 100%;
+  }
+  
+.float > div {
+    margin: 5px;
+    width: 50px;
+    height: 150px;
+  }
+  
+ .float >  .left {
+    float: left;
+    background: pink;
+  }
+  
+ .float > .right {
+    float: right;
+    background: cyan;
+  }
+
+
+
+/* clear float */
+.clear-float {
+    border: 1px solid brown;
+    margin-top: 20px;
+    width: 600px;
+}
+
+.clear-float > .left {
+    width: 80px;
+    height: 120px;
+    background-color: crimson;
+    float: left;
+}
+
+.clear-float > .right {
+    width: 100px;
+    height: 150px;
+    background-color: chocolate;
+    float: right;
+}
+
+/*
+clear
+如果一个元素只包含浮动元素，它的高度会折叠为空。
+如果您希望它始终能够调整大小，以便在其中包含浮动元素，
+则需要自行清除其子项。这称为 clearfix，
+一种方法是将 clear 添加到替换的 ::after 伪元素上。
+*/
+
+.float::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.clear-left > p {
+    clear: left;
+}
+
+.clear-right > p {
+    clear: right;
+}
+
+.clear-both > p {
+    clear: both;
+}
+
+/*
+如果不设置那么默认高度会被折叠
+*/
+.clear-both::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+

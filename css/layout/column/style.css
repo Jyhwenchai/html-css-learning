@@ -1,0 +1,68 @@
+.column-count {
+    column-count: 2;
+    border: 1px solid  red;
+}
+
+.column-width {
+    column-width: 200px;
+    border: 1px solid blue;
+}
+
+.column-gap {
+    column-count: 3;
+    column-gap: 100px;
+    border: 1px solid indianred;
+}
+
+.column-rule {
+    border: 1px solid lightseagreen;
+    column-count: 3;
+    column-rule: 4px dotted #abcfea;
+}
+
+.column-span {
+    border: 1px solid green;
+    column-count: 3;
+    column-rule: 4px dotted brown;
+}
+
+.column-span > h2 {
+    column-span: all;
+    background-color: rgb(79, 185, 227);
+    color: white;
+    padding: .5em;
+    text-align: center;
+}
+
+.example > .column-issue, .example > .column-issue-fixed {
+    width: 800px;
+    height: 800px;
+    overflow: scroll;
+}
+
+.example > .column-issue > .container, .example > .column-issue-fixed > .container {
+    column-width: 250px;
+    column-gap: 20px;
+}
+
+.example > .column-issue > .container > .card {
+    background-color: rgb(207, 232, 220);
+    border: 2px solid rgb(79, 185, 227);
+    padding: 10px;
+    margin: 0 0 1em 0;
+}
+
+.example > .column-issue-fixed > .container {
+    column-width: 250px;
+    column-gap: 20px;
+}
+
+.example > .column-issue-fixed > .container > .card {
+    background-color: rgb(207, 232, 220);
+    border: 2px solid rgb(79, 185, 227);
+    padding: 10px;
+    margin: 0 0 1em 0;
+    /* fixed column break line issue */
+    break-inside: avoid;
+    page-break-inside: avoid;
+}

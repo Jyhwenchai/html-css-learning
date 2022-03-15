@@ -1,0 +1,6 @@
+#example-element {
+    background-color: #ffdead;
+    background-image: url("../../../media/examples/star.png");
+    background-repeat: no-repeat;
+    height: 100%
+}

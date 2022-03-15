@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Aligning Items in a Flex Container</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/align_items_in_flex_container.css">
+</head>
+
+<body>
+    <h1>对齐相关属性</h1>
+    <h2><a href="https://drafts.csswg.org/css-flexbox/#align-content-property">See Also</a></h2>
+    下面统一称<strong>垂直于主轴方向的轴为</strong>横轴。主轴可能是水平方向或垂直方向的(默认是水平方向也就是从左往由布局)，那么对应的横轴就是垂直方向或水平方向。
+    <ul>
+        <li>align-items: 控制<strong>横轴</strong>的对齐方式</li>
+        <li>align-self: 控制<strong>横轴</strong>的 flex-item 的对齐方式</li>
+        <li>align-content: 控制所有 flex-item 在<strong>横轴</strong>空间上的布局方式(注意不是对齐方式)。</li>
+        <li>justify-content: 控制<strong>主轴</strong>方向的对齐方式</li>
+        <li>gap,gap-column,gap-row: 用于在 flex-item 之间主轴和横轴上的间隙。</li>
+    </ul>
+    <h2>align-items</h2>
+    <ul>
+        <li class="align-items">
+            <p>flex-start</p>
+            <div>布局开始于横轴的左上边缘位置</div>
+            <div class="flex flex-start">
+                <div class="item">
+                    <div class="content">a</div>
+                </div>
+                <div class="item">
+                    <div class="content">b</div>
+                </div>
+                <div class="item">
+                    <div class="content">c</div>
+                </div>
+            </div>
+        </li>
+        <li class="align-items">
+            <p>flex-end</p>
+            <div>布局开始于横轴的左下边缘位置</div>
+            <div class="flex flex-end">
+                <div class="item">
+                    <div class="content">a</div>
+                </div>
+                <div class="item">
+                    <div class="content">b</div>
+                </div>
+                <div class="item">
+                    <div class="content">c</div>
+                </div>
+            </div>
+        </li>
+        <li class="align-items">
+            <p>center</p>
+            <div>布局开始于横轴的左边，并垂直主轴</div>
+            <div class="flex center">
+                <div class="item">
+                    <div class="content">a</div>
+                </div>
+                <div class="item">
+                    <div class="content">b</div>
+                </div>
+                <div class="item">
+                    <div class="content">c</div>
+                </div>
+            </div>
+        </li>
+
+        <li class="align-items">
+            <p>stretch</p>
+            <div>布局开始于左边，flex-item 的横轴会被拉伸等于横轴的值</div>
+            <div class="flex stretch">
+                <div class="item">
+                    <div class="content">a</div>
+                </div>
+                <div class="item">
+                    <div class="content">b</div>
+                </div>
+                <div class="item">
+                    <div class="content">c</div>
+                </div>
+            </div>
+        </li>
+
+        <li class="align-items">
+            <p>baseline</p>
+            <div>延 flex 容器的基线对齐</div>
+            <div class="flex baseline">
+                <div class="item">
+                    <div class="content">red</div>
+                </div>
+                <div class="item">
+                    <div class="content">green</div>
+                </div>
+                <div class="item">
+                    <div class="content">blue</div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <br>
+    <hr>
+    <!-- align-self -->
+    <h2>align-self</h2>
+    <div>调整单个 flex-item 相对于 flex 容器横轴的布局，其值与 align-items 相同</div>
+    <ul>
+        <li class="align-self">
+            <p>flex-start</p>
+            <div class="flex flex-start">
+                <div class="item">
+                    <div class="content">a</div>
+                </div>
+                <div class="item">
+                    <div class="content">b</div>
+                </div>
+                <div class="item">
+                    <div class="content">c</div>
+                </div>
+            </div>
+        </li>
+        <li class="align-self">
+            <p>flex-end</p>
+            <div class="flex flex-end">
+                <div class="item">
+                    <div class="content">a</div>
+                </div>
+                <div class="item">
+                    <div class="content">b</div>
+                </div>
+                <div class="item">
+                    <div class="content">c</div>
+                </div>
+            </div>
+        </li>
+        <li class="align-self">
+            <p>center</p>
+            <div class="flex center">
+                <div class="item">
+                    <div class="content">a</div>
+                </div>
+                <div class="item">
+                    <div class="content">b</div>
+                </div>
+                <div class="item">
+                    <div class="content">c</div>
+                </div>
+            </div>
+        </li>
+
+        <li class="align-self">
+            <p>stretch</p>
+            <div class="flex stretch">
+                <div class="item">
+                    <div class="content">a</div>
+                </div>
+                <div class="item">
+                    <div class="content">b</div>
+                </div>
+                <div class="item">
+                    <div class="content">c</div>
+                </div>
+            </div>
+        </li>
+        <li class="align-self">
+            <p>baseline</p>
+            <div class="flex baseline">
+                <div class="item">
+                    <div class="content">a</div>
+                </div>
+                <div class="item">
+                    <div class="content">b</div>
+                </div>
+                <div class="item">
+                    <div class="content">c</div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <br>
+    <hr>
+    <!-- Align Content -->
+    <h2>align-content</h2>
+    <div>控制整体 flex-item 在横轴上的空间布局方式</div>
+    <ul>
+        <li class="align-content">
+            <p>flex-start</p>
+            <div class="flex flex-start">
+                <div class="item">
+                    <div class="content">One</div>
+                </div>
+                <div class="item">
+                    <div class="content">Two</div>
+                </div>
+                <div class="item">
+                    <div class="content">Three</div>
+                </div>
+                <div class="item">
+                    <div class="content">Four</div>
+                </div>
+                <div class="item">
+                    <div class="content">Five</div>
+                </div>
+                <div class="item">
+                    <div class="content">Six</div>
+                </div>
+                <div class="item">
+                    <div class="content">Seven</div>
+                </div>
+                <div class="item">
+                    <div class="content">Eight</div>
+                </div>
+            </div>
+        </li>
+        <li class="align-content">
+            <p>flex-end</p>
+            <div class="flex flex-end">
+                <div class="item">
+                    <div class="content">One</div>
+                </div>
+                <div class="item">
+                    <div class="content">Two</div>
+                </div>
+                <div class="item">
+                    <div class="content">Three</div>
+                </div>
+                <div class="item">
+                    <div class="content">Four</div>
+                </div>
+                <div class="item">
+                    <div class="content">Five</div>
+                </div>
+                <div class="item">
+                    <div class="content">Six</div>
+                </div>
+                <div class="item">
+                    <div class="content">Seven</div>
+                </div>
+                <div class="item">
+                    <div class="content">Eight</div>
+                </div>
+            </div>
+        </li>
+        <li class="align-content">
+            <p>center</p>
+            <div class="flex center">
+                <div class="item">
+                    <div class="content">One</div>
+                </div>
+                <div class="item">
+                    <div class="content">Two</div>
+                </div>
+                <div class="item">
+                    <div class="content">Three</div>
+                </div>
+                <div class="item">
+                    <div class="content">Four</div>
+                </div>
+                <div class="item">
+                    <div class="content">Five</div>
+                </div>
+                <div class="item">
+                    <div class="content">Six</div>
+                </div>
+                <div class="item">
+                    <div class="content">Seven</div>
+                </div>
+                <div class="item">
+                    <div class="content">Eight</div>
+                </div>
+            </div>
+        </li>
+
+        <li class="align-content">
+            <p>space-between</p>
+            <div class="flex space-between">
+                <div class="item">
+                    <div class="content">One</div>
+                </div>
+                <div class="item">
+                    <div class="content">Two</div>
+                </div>
+                <div class="item">
+                    <div class="content">Three</div>
+                </div>
+                <div class="item">
+                    <div class="content">Four</div>
+                </div>
+                <div class="item">
+                    <div class="content">Five</div>
+                </div>
+                <div class="item">
+                    <div class="content">Six</div>
+                </div>
+                <div class="item">
+                    <div class="content">Seven</div>
+                </div>
+                <div class="item">
+                    <div class="content">Eight</div>
+                </div>
+            </div>
+        </li>
+        <li class="align-content">
+            <p>stretch</p>
+            <div>所有 flex-item 在横轴上被拉伸至相同的值以撑满横轴的空间</div>
+            <div class="flex stretch">
+                <div class="item">
+                    <div class="content">One</div>
+                </div>
+                <div class="item">
+                    <div class="content">Two</div>
+                </div>
+                <div class="item">
+                    <div class="content">Three</div>
+                </div>
+                <div class="item">
+                    <div class="content">Four</div>
+                </div>
+                <div class="item">
+                    <div class="content">Five</div>
+                </div>
+                <div class="item">
+                    <div class="content">Six</div>
+                </div>
+                <div class="item">
+                    <div class="content">Seven</div>
+                </div>
+                <div class="item">
+                    <div class="content">Eight</div>
+                </div>
+            </div>
+        </li>
+        <li class="align-content">
+            <p>space-around</p>
+            <div class="flex space-around">
+                <div class="item">
+                    <div class="content">One</div>
+                </div>
+                <div class="item">
+                    <div class="content">Two</div>
+                </div>
+                <div class="item">
+                    <div class="content">Three</div>
+                </div>
+                <div class="item">
+                    <div class="content">Four</div>
+                </div>
+                <div class="item">
+                    <div class="content">Five</div>
+                </div>
+                <div class="item">
+                    <div class="content">Six</div>
+                </div>
+                <div class="item">
+                    <div class="content">Seven</div>
+                </div>
+                <div class="item">
+                    <div class="content">Eight</div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <br>
+    <hr>
+    <!-- justify content -->
+    <h2>justify-content</h2>
+    <div>与 align-content 相反，justify-content 控制<strong>主轴</strong>方向的对齐方式</div>
+    <ul>
+        <li class="justify-content">
+            <p>flex-start</p>
+            <div>从主轴开始方向布局</div>
+            <div class="flex flex-start">
+                <div class="item">
+                    <div class="content">One</div>
+                </div>
+                <div class="item">
+                    <div class="content">Two</div>
+                </div>
+                <div class="item">
+                    <div class="content">Three</div>
+                </div>
+                <div class="item">
+                    <div class="content">Four</div>
+                </div>
+
+            </div>
+        </li>
+        <li class="justify-content">
+            <p>flex-end</p>
+            <div>从主轴结束方向布局</div>
+            <div class="flex flex-end">
+                <div class="item">
+                    <div class="content">One</div>
+                </div>
+                <div class="item">
+                    <div class="content">Two</div>
+                </div>
+                <div class="item">
+                    <div class="content">Three</div>
+                </div>
+                <div class="item">
+                    <div class="content">Four</div>
+                </div>
+            </div>
+        </li>
+        <li class="justify-content">
+            <p>center</p>
+            <div>居中与主轴</div>
+            <div class="flex center">
+                <div class="item">
+                    <div class="content">One</div>
+                </div>
+                <div class="item">
+                    <div class="content">Two</div>
+                </div>
+                <div class="item">
+                    <div class="content">Three</div>
+                </div>
+                <div class="item">
+                    <div class="content">Four</div>
+                </div>
+
+            </div>
+        </li>
+
+        <li class="justify-content">
+            <p>space-between</p>
+            <div>平均分配剩余空间，主轴两边不留空隙</div>
+            <div class="flex space-between">
+                <div class="item">
+                    <div class="content">One</div>
+                </div>
+                <div class="item">
+                    <div class="content">Two</div>
+                </div>
+                <div class="item">
+                    <div class="content">Three</div>
+                </div>
+                <div class="item">
+                    <div class="content">Four</div>
+                </div>
+
+            </div>
+        </li>
+
+        <li class="justify-content">
+            <p>space-around</p>
+            <div>平均分配剩余空间，主轴留有空隙</div>
+            <div class="flex space-around">
+                <div class="item">
+                    <div class="content">One</div>
+                </div>
+                <div class="item">
+                    <div class="content">Two</div>
+                </div>
+                <div class="item">
+                    <div class="content">Three</div>
+                </div>
+                <div class="item">
+                    <div class="content">Four</div>
+                </div>
+
+            </div>
+        </li>
+    </ul>
+
+    <!-- Using auto margins for main axis -->
+    <h2>Auto Margin</h2>
+    <ul>
+        <li class="auto-margin">
+            <p>auto margin</p>
+            <div>设置 flex-item 在主轴上自动的边距</div>
+            <div class="flex">
+                <div class="item">
+                    <div class="content">One</div>
+                </div>
+                <div class="item auto-right">
+                    <div class="content">Two</div>
+                </div>
+                <div class="item">
+                    <div class="content">Three</div>
+                </div>
+                <div class="item auto-left">
+                    <div class="content ">Four</div>
+                </div>
+                <div class="item">
+                    <div class="content">Five</div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <!-- Gap -->
+    <h2>Create Gap</h2>
+    <p>gap 为 flex item 间创建间隙，column-gap 创建主轴上的间距，row-gap 创建横轴上的间距</p>
+    <ul>
+        <li class="gap">
+            <p>gap</p>
+            <div class="flex">
+                <div class="item">
+                    <div class="content">One</div>
+                </div>
+                <div class="item">
+                    <div class="content">Two</div>
+                </div>
+                <div class="item">
+                    <div class="content">Three</div>
+                </div>
+                <div class="item">
+                    <div class="content ">Four</div>
+                </div>
+                <div class="item">
+                    <div class="content">Five</div>
+                </div>
+                <div class="item">
+                    <div class="content">Six</div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</body>
+
+</html>

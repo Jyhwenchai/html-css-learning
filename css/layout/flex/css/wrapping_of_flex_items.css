@@ -1,0 +1,66 @@
+.flex {
+    width: 300px;
+    flex-wrap: wrap;
+}
+
+.wrap-no-grow-shrink > .item {
+    /* width: 100px; */   /* 或则使用 flex 设置 item 的宽度*/
+    flex: 0 0 100px;
+    border: none;
+}
+
+.wrap-no-grow-shrink > .item:nth-child(odd) {
+    background-color: burlywood;
+}
+
+.wrap-no-grow-shrink > .item:last-child {
+    background-color: crimson;
+}
+
+.flex-wrap > .item {
+    flex: 1 1 100px;
+    border: none;
+}
+
+.flex-wrap > .item:nth-child(odd) {
+    background-color: burlywood;
+}
+
+.flex-wrap > .item:last-child {
+    background-color: crimson;
+}
+
+/* visibility: collaapse/hidden */
+.visibility {
+    flex-wrap: wrap;
+}
+
+.visibility > .item {
+    border: none;
+    flex: 1 1 100px;
+}
+
+.visibility > .item:nth-child(odd) {
+    background-color: burlywood;
+}
+
+.visibility > .item:last-child {
+    visibility: collapse;
+}
+/* display: none */
+.display-none {
+    flex-wrap: wrap;
+}
+
+.display-none > .item {
+    border: none;
+    flex: 1 1 100px;
+}
+
+.display-none  > .item:nth-child(odd) {
+    background-color: burlywood;
+}
+
+.display-none   > .item:last-child {
+    display: none;
+}

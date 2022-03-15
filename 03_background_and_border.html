@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Background and border</title>
+    <style>
+        
+        .background {
+            margin: 10px;
+            width: 200px;
+            height: 200px ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            float: left;
+        }
+        .background-color {
+            background-color: cadetblue;
+        }
+        .background-gradient {
+            background-image: linear-gradient(105deg, rgba(255, 255, 0, 0.637) 30%, rgb(25, 173, 202) 96%);
+        }
+        .background-image {
+            background-image: url(images/friend_icon_likes.png);
+        }
+        .background-repeat {
+            background-image: url(images/friend_icon_likes.png);
+            background-repeat: no-repeat;
+        }
+        .background-size {
+            background-image: url(images/friend_icon_likes.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-size: contain;
+        }
+        .background-position {
+            background-image: url(images/friend_icon_likes.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* background-position: center; */
+            /* background-position-x: right; */
+            /* background-position-y: bottom; */
+            /* background-position: 50%, 50%; */
+            background-position: 50px 50px;
+        }
+        .background-clip{
+            border: 10px solid blue;
+            background-image: url(images/friend_icon_likes.png);
+            /* background-repeat: no-repeat; */
+            /* background-size: cover; */
+            background-clip: border-box;
+        }
+        .background-attachment-scroll {
+            padding: 10px;
+            background-image: url(images/bgtile.png);
+            background-attachment: scroll;
+            overflow: auto;
+        }
+        .background-attachment-fixed {
+            padding: 10px;
+            background-image: url(images/bgtile.png);
+            background-attachment: fixed;
+            overflow: auto;
+        }
+        .background-attachment-local{
+            padding: 10px;
+            background-image: url(images/bgtile.png);
+            background-attachment: local;
+            overflow: auto;
+        }
+        .background-shorthand {
+            border: 10px solid blue;
+            background-image: url(images/friend_icon_likes.png);
+            background: linear-gradient(105deg, rgba(255, 255, 0, 0.637) 30%, rgb(25, 173, 202) 96%) center center / 200px 150px no-repeat, rebeccapurple; 
+        }
+   </style>
+</head>
+
+<body>
+    <h1>Background and Border</h1>
+    <h2>1. Background</h2>
+    <ol>
+        <div class="background background-color">
+            <span>background-color</span>
+        </div>
+        <div class="background background-gradient">
+            <span>background-color</span>
+        </div>
+        <div class="background background-image">
+            <span>background-image</span>
+        </div>
+        <div class="background background-repeat">
+            <span>background-repeat</span>
+        </div>
+        <div class="background background-size">
+            <span>background-size</span>
+        </div>
+        <div class="background background-position">
+            <span>background-position</span>
+        </div>
+        <div class="background background-clip">
+            <span>background-clip</span>
+        </div>
+        <div class="background background-attachment-scroll">
+            <span>background-attachment: scroll causes the element's background to be fixed to the page, so that it scrolls when the page is scrolled. If the element content is scrolled, the background does not move.</span>
+            <pre style="height: 800px;"></pre>
+        </div>
+        <div class="background background-attachment-fixed">
+            <span>background-attachment: fixed causes an element's background to be fixed to the viewport, so that it doesn't scroll when the page or element content is scrolled. It will always remain in the same position on the screen.</span>
+            <pre style="height: 800px;"></pre>
+        </div>
+         <div class="background background-attachment-local">
+            <span>background-attachment: local, new to CSS3, causes an element's background to be fixed to the actual element itself. So When the page is scrolled, the element's background will move along with it only if the element does so (so not in the case of elements with position: fixed.) When the element's content is scrolled, the background will scroll along with it.</span>
+            <pre style="height: 800px;"></pre>
+        </div>
+ 
+        <div class="background background-shorthand">
+            <span>background-shorthand</span>
+        </div>
+        <div class="background background-color">
+            <span>background-color</span>
+        </div>
+        <div class="background background-color">
+            <span>background-color</span>
+        </div>
+        <div class="background background-color">
+            <span>background-color</span>
+        </div>
+
+        <div class="background background-color">
+            <span>background-color</span>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </ol>
+</body>
+
+</html>

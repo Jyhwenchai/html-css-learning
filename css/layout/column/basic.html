@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Multiple Column</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <h1><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Multiple-column_Layout">Multiple
+                Column</a></h1>
+        <ul>
+            <li>column-count: 定义将页面分割为多少列</li>
+            <li>column-width: 定义列的宽度, 当不指定 column-count 时浏览器会自动根据内容的多少来分割为多列</li>
+            <li>column-gap: 定义列之间的间隙</li>
+            <li>column-rule: 定义 column 的样式, 是column-rule-width、 column-rule-style、column-rule-color 的简写</li>
+            <li>column-span: 在指定的某一列中设置，指定该列可跨多列</li>
+        </ul>
+        <h2>column-count (列数目)</h2>
+        <div class="column-count">
+            <h1>Simple multicol example</h1>
+
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem
+                placerat vulputate.
+                Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies
+                tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci
+                vel, viverra egestas ligula.
+                Curabitur vehicula tellus neque, ac ornare ex malesuada et. In vitae convallis lacus. Aliquam erat
+                volutpat. Suspendisse
+                ac imperdiet turpis. Aenean finibus sollicitudin eros pharetra congue. Duis ornare egestas augue ut
+                luctus. Proin blandit
+                quam nec lacus varius commodo et a urna. Ut id ornare felis, eget fermentum sapien.</p>
+
+            <p>Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. Phasellus turpis est,
+                posuere sit amet dapibus ut, facilisis sed est. Nam id risus quis ante semper consectetur eget aliquam
+                lorem. Vivamus tristique
+                elit dolor, sed pretium metus suscipit vel. Mauris ultricies lectus sed lobortis finibus. Vivamus eu
+                urna eget velit
+                cursus viverra quis vestibulum sem. Aliquam tincidunt eget purus in interdum. Cum sociis natoque
+                penatibus et magnis
+                dis parturient montes, nascetur ridiculus mus.</p>
+        </div>
+
+        <h2>column-width (列宽度)</h2>
+        <div class="column-width">
+            <h1>Simple multicol example</h1>
+
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem
+                placerat vulputate.
+                Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies
+                tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci
+                vel, viverra egestas ligula.
+                Curabitur vehicula tellus neque, ac ornare ex malesuada et. In vitae convallis lacus. Aliquam erat
+                volutpat. Suspendisse
+                ac imperdiet turpis. Aenean finibus sollicitudin eros pharetra congue. Duis ornare egestas augue ut
+                luctus. Proin blandit
+                quam nec lacus varius commodo et a urna. Ut id ornare felis, eget fermentum sapien.</p>
+
+            <p>Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. Phasellus turpis est,
+                posuere sit amet dapibus ut, facilisis sed est. Nam id risus quis ante semper consectetur eget aliquam
+                lorem. Vivamus tristique
+                elit dolor, sed pretium metus suscipit vel. Mauris ultricies lectus sed lobortis finibus. Vivamus eu
+                urna eget velit
+                cursus viverra quis vestibulum sem. Aliquam tincidunt eget purus in interdum. Cum sociis natoque
+                penatibus et magnis
+                dis parturient montes, nascetur ridiculus mus.</p>
+        </div>
+        <h2>column-gap (列与列的间隙)</h2>
+        <div class="column-gap">
+            <h1>Simple multicol example</h1>
+
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem
+                placerat vulputate.
+                Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies
+                tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci
+                vel, viverra egestas ligula.
+                Curabitur vehicula tellus neque, ac ornare ex malesuada et. In vitae convallis lacus. Aliquam erat
+                volutpat. Suspendisse
+                ac imperdiet turpis. Aenean finibus sollicitudin eros pharetra congue. Duis ornare egestas augue ut
+                luctus. Proin blandit
+                quam nec lacus varius commodo et a urna. Ut id ornare felis, eget fermentum sapien.</p>
+
+            <p>Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. Phasellus turpis est,
+                posuere sit amet dapibus ut, facilisis sed est. Nam id risus quis ante semper consectetur eget aliquam
+                lorem. Vivamus tristique
+                elit dolor, sed pretium metus suscipit vel. Mauris ultricies lectus sed lobortis finibus. Vivamus eu
+                urna eget velit
+                cursus viverra quis vestibulum sem. Aliquam tincidunt eget purus in interdum. Cum sociis natoque
+                penatibus et magnis
+                dis parturient montes, nascetur ridiculus mus.</p>
+        </div>
+
+        <h2>column-rule (列之间分隔样式)</h2>
+        <div class="column-rule">
+            <h1>Simple multicol example</h1>
+
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem
+                placerat vulputate.
+                Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies
+                tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci
+                vel, viverra egestas ligula.
+                Curabitur vehicula tellus neque, ac ornare ex malesuada et. In vitae convallis lacus. Aliquam erat
+                volutpat. Suspendisse
+                ac imperdiet turpis. Aenean finibus sollicitudin eros pharetra congue. Duis ornare egestas augue ut
+                luctus. Proin blandit
+                quam nec lacus varius commodo et a urna. Ut id ornare felis, eget fermentum sapien.</p>
+
+            <p>Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. Phasellus turpis est,
+                posuere sit amet dapibus ut, facilisis sed est. Nam id risus quis ante semper consectetur eget aliquam
+                lorem. Vivamus tristique
+                elit dolor, sed pretium metus suscipit vel. Mauris ultricies lectus sed lobortis finibus. Vivamus eu
+                urna eget velit
+                cursus viverra quis vestibulum sem. Aliquam tincidunt eget purus in interdum. Cum sociis natoque
+                penatibus et magnis
+                dis parturient montes, nascetur ridiculus mus.</p>
+        </div>
+ 
+        <h2>column-span (使内容可以跨越所有的列)</h2>
+        <div class="column-span">
+            <h1>Simple multicol example</h1>
+
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem
+                placerat vulputate.
+                Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies
+                tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci
+                vel, viverra egestas ligula.
+                Curabitur vehicula tellus neque, ac ornare ex malesuada et. In vitae convallis lacus. Aliquam erat
+                volutpat. Suspendisse
+                ac imperdiet turpis. Aenean finibus sollicitudin eros pharetra congue. Duis ornare egestas augue ut
+                luctus. Proin blandit
+                quam nec lacus varius commodo et a urna. Ut id ornare felis, eget fermentum sapien.</p>
+            <h2>Spanning subhead</h2>
+            <p>Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. Phasellus turpis est,
+                posuere sit amet dapibus ut, facilisis sed est. Nam id risus quis ante semper consectetur eget aliquam
+                lorem. Vivamus tristique
+                elit dolor, sed pretium metus suscipit vel. Mauris ultricies lectus sed lobortis finibus. Vivamus eu
+                urna eget velit
+                cursus viverra quis vestibulum sem. Aliquam tincidunt eget purus in interdum. Cum sociis natoque
+                penatibus et magnis
+                dis parturient montes, nascetur ridiculus mus.</p>
+        </div>
+ 
+        <h2>Break Line issue</h2>
+        <div class="example">
+            <div class="column-issue">
+                <div class="container">
+                    <div class="card">
+                      <h2>I am the heading</h2>
+                      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat
+                                vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies
+                                tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci
+                                vel, viverra egestas ligula.</p>
+                    </div>
+                
+                    <div class="card">
+                      <h2>I am the heading</h2>
+                      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat
+                                vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies
+                                tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci
+                                vel, viverra egestas ligula.</p>
+                    </div>
+                
+                    <div class="card">
+                      <h2>I am the heading</h2>
+                      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat
+                                vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies
+                                tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci
+                                vel, viverra egestas ligula.</p>
+                    </div>
+                    <div class="card">
+                      <h2>I am the heading</h2>
+                      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat
+                                vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies
+                                tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci
+                                vel, viverra egestas ligula.</p>
+                    </div>
+                
+                    <div class="card">
+                      <h2>I am the heading</h2>
+                      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat
+                                vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies
+                                tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci
+                                vel, viverra egestas ligula.</p>
+                    </div>
+                
+                    <div class="card">
+                      <h2>I am the heading</h2>
+                      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat
+                                vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies
+                                tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci
+                                vel, viverra egestas ligula.</p>
+                    </div>
+                
+                    <div class="card">
+                      <h2>I am the heading</h2>
+                      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat
+                                vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies
+                                tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci
+                                vel, viverra egestas ligula.</p>
+                    </div>
+                
+                </div>
+                
+            </div>
+
+            <h2>column issue fixed</h2>
+            <div class="column-issue-fixed">
+                <div class="container">
+                    <div class="card">
+                      <h2>I am the heading</h2>
+                      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat
+                                vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies
+                                tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci
+                                vel, viverra egestas ligula.</p>
+                    </div>
+                
+                    <div class="card">
+                      <h2>I am the heading</h2>
+                      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat
+                                vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies
+                                tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci
+                                vel, viverra egestas ligula.</p>
+                    </div>
+                
+                    <div class="card">
+                      <h2>I am the heading</h2>
+                      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat
+                                vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies
+                                tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci
+                                vel, viverra egestas ligula.</p>
+                    </div>
+                    <div class="card">
+                      <h2>I am the heading</h2>
+                      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat
+                                vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies
+                                tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci
+                                vel, viverra egestas ligula.</p>
+                    </div>
+                
+                    <div class="card">
+                      <h2>I am the heading</h2>
+                      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat
+                                vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies
+                                tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci
+                                vel, viverra egestas ligula.</p>
+                    </div>
+                
+                    <div class="card">
+                      <h2>I am the heading</h2>
+                      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat
+                                vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies
+                                tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci
+                                vel, viverra egestas ligula.</p>
+                    </div>
+                
+                    <div class="card">
+                      <h2>I am the heading</h2>
+                      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat
+                                vulputate. Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies
+                                tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci
+                                vel, viverra egestas ligula.</p>
+                    </div>
+                
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

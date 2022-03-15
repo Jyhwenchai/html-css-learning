@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Position</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position">Position</a></h1>
+    <p>position CSS 属性设置元素在文档中的定位方式。 top、right、bottom 和 left 属性决定了定位元素的最终位置。</p>
+    <ul>
+        <li>static: 元素根据文档的正常流进行定位。 top、right、bottom、left 和 z-index 属性不起作用。这是默认值。</li>
+        <br>
+        <li>relative:
+            元素按照文档的正常流向定位，然后根据top、right、bottom和left的值相对于自身进行偏移。偏移量不会影响任何其他元素的位置；因此，页面布局中为元素提供的空间与位置是静态的一样。<br><br>
+            当 z-index 的值不是 auto 时，此值会创建一个新的堆叠上下文。它对 table-*-group、table-row、table-column、table-cell 和 table-caption
+            元素的影响是未定义的。当 z-index 的值不是 auto 时，此值会创建一个新的堆叠上下文。它对 table-*-group、table-row、table-column、table-cell 和
+            table-caption 元素的影响是未定义的。
+        </li>
+        <br>
+        <li>
+            absolute: 
+            该元素已从正常文档流中移除，并且不会在页面布局中为该元素创建空间。如果有的话，它是相对于其最近定位的祖先定位的；否则，它相对于初始父元素(relative 布局的的元素)的位置放置。它的最终位置由top、right、bottom、left 决定。 <br><br>
+            当 z-index 的值不是 auto 时，此值会创建一个新的堆叠上下文。绝对定位框的边距不会与其他边距折叠。
+        </li>
+        <br>
+        <li>
+            fixed:
+            该元素已从正常文档流中移除，并且不会在页面布局中为该元素创建空间。它是相对于<strong>视图窗口</strong>建立的初始包含块定位的，除非它的祖先之一将变换、透视或过滤器属性设置为除 none 以外的其他属性（请参阅 CSS 转换规范），在这种情况下，祖先表现为包含块。 （请注意，浏览器与透视和过滤器的不一致导致包含块的形成。）它的最终位置由top、right、bottom、left 决定的。
+        </li>
+        <li>
+            sticky:
+            元素按照文档的正常流向定位，然后相对于它最近的滚动祖先和包含块（最近的块级祖先）进行偏移，包括与表格相关的元素，基于top、right、bottom、left。偏移量不会影响任何其他元素的位置。
+        </li>
+    </ul>
+    <div>
+        <h2>relative</h2>
+        <div class="position relative">
+            <div class="content">Content</div>
+        </div>
+        
+        <h2>absolute</h2>
+        <div class="position absolute">
+            <div class="content">Content</div>
+        </div>
+
+        <h2>fixed</h2>
+        <div class="position fixed">
+            <div class="content">Fixed Content</div>
+        </div>
+        
+        <h2>sticky</h2>
+        <div class="position sticky">
+            <dl>
+                <div>
+                  <dt>A</dt>
+                  <dd>Andrew W.K.</dd>
+                  <dd>Apparat</dd>
+                  <dd>Arcade Fire</dd>
+                  <dd>At The Drive-In</dd>
+                  <dd>Aziz Ansari</dd>
+                </div>
+                <div>
+                  <dt>C</dt>
+                  <dd>Chromeo</dd>
+                  <dd>Common</dd>
+                  <dd>Converge</dd>
+                  <dd>Crystal Castles</dd>
+                  <dd>Cursive</dd>
+                </div>
+                <div>
+                  <dt>E</dt>
+                  <dd>Explosions In The Sky</dd>
+                </div>
+                <div>
+                  <dt>T</dt>
+                  <dd>Ted Leo &amp; The Pharmacists</dd>
+                  <dd>T-Pain</dd>
+                  <dd>Thrice</dd>
+                  <dd>TV On The Radio</dd>
+                  <dd>Two Gallants</dd>
+                </div>
+              </dl>
+              
+        </div>
+    </div>
+</body>
+
+</html>
