@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    .container {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      background-color: aquamarine;
+      padding: 20px;
+      margin: 20px;
+      border: 10px solid orange;
+    }
+    .section {
+      position: absolute;
+      width: 100%;
+      height: 100px;
+      background-color: burlywood;
+      /* bottom: 0;
+      left: 0; */
+    }
+
+    .section.normal {
+      position: relative;
+    }
+    .section.fix-bottom {
+      left: 0;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- 由于 absolute 会移除元素正常的文档流，所以它的宽高不会受父元素的 padding、border 的约束 -->
+ <div class="demo">
+    <div class="container">
+      当子元素 positon: relation; width: 100%; 时, 会扣除父元素中的 padding
+      <div class="section normal">
+        some content
+      </div>
+    </div>
+    <div class="container">
+      当子元素 position: absolute; width: 100%; 时，section 从父元素 content 的位置开始布局
+      <div class="section">
+        some content
+      </div>
+    </div>
+    <div class="container">
+      当子元素 position: absolute; width: 100%; left: 0; 时，section 从父元素 padding-left 的位置开始布局
+      <div class="section fix-bottom">
+        some content
+     </div>
+    </div> 
+  </div>  
+</body>
+</html>

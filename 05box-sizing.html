@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Box Sizing</title>
+  <style>
+    .box {
+      width: 300px;
+      height: 200px;
+      border: 20px solid mediumaquamarine;
+      margin: 20px;
+      padding: 20px;
+    }
+
+    .box .sub-box {
+      width: 300px;
+      height: 100px;
+      border: 20px solid wheat;
+      padding: 20px;
+    }
+
+    /* =============== */
+    .content-box {
+      box-sizing: content-box;
+    }
+    .border-box {
+      box-sizing: border-box;
+    }
+
+    .sub-content-box {
+      box-sizing: content-box;
+    }
+
+    .sub-border-box {
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>父子元素不同 box-sizing 情况下的布局表现</h2>
+    <ul>
+      <li>当 box-sizing 为 content-box 时，box 的 width = border + padding + content的宽度</li>
+      <li>当 box-sizing 为 border-box 时，box 的 width = content的宽度，border 和 padding 的宽度会从 content的宽度中扣除</li>
+    </ul>
+    <div class="box content-box">
+      box-sizing: content-box; 
+      <div class="sub-box sub-content-box">
+        box-sizing: content-box; 
+      </div>
+    </div>
+    <div class="box content-box">
+      box-sizing: content-box; 
+      <div class="sub-box sub-border-box">
+        box-sizing: border-box; 
+      </div>
+    </div>
+    <div class="box border-box">
+      box-sizing: border-box; 
+      <div class="sub-box sub-content-box">
+        box-sizing: content-box; 
+      </div>
+    </div>
+    <div class="box border-box">
+      box-sizing: border-box; 
+      <div class="sub-box sub-border-box">
+        box-sizing: border-box; 
+      </div>
+    </div>
+
+  </div> 
+</body>
+</html>
